@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="HisTrophee — explore historical events, timelines, calendars, statistics and more in one powerful desktop application.">
+          content="HisTrophee is a PyQt5 desktop app for looking up what happened in a given year — with Hijri date conversion, a Wikipedia fallback, and CSV export.">
 
     <meta name="theme-color" content="#111318">
 
@@ -248,20 +247,6 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            right: -180px;
-            top: 80px;
-            border-radius: 50%;
-            border: 1px solid rgba(214,168,92,.14);
-            box-shadow:
-                0 0 0 70px rgba(214,168,92,.025),
-                0 0 0 140px rgba(214,168,92,.018);
         }
 
         .eyebrow {
@@ -895,7 +880,7 @@
 
 <!-- MOBILE HEADER -->
 <header class="mobile-header">
-    <strong>📜 HisTrophee</strong>
+    <strong>HisTrophee</strong>
     <button class="menu-button" id="menuButton">☰</button>
 </header>
 
@@ -905,14 +890,14 @@
 <aside class="sidebar" id="sidebar">
 
     <div class="brand">
-        <div class="brand-icon">📜</div>
+        <div class="brand-icon">H</div>
         <div>
             <h1>HisTrophee</h1>
-            <small>Historical Explorer</small>
+            <small>Desktop history lookup</small>
         </div>
     </div>
 
-    <div class="nav-title">Documentation</div>
+    <div class="nav-title">Docs</div>
 
     <nav class="nav" id="nav">
 
@@ -937,7 +922,7 @@
         </a>
 
         <a href="#on-this-day">
-            <span class="nav-icon">📅</span>
+            <span class="nav-icon">☉</span>
             On This Day
         </a>
 
@@ -990,15 +975,15 @@
 
     <div class="sidebar-bottom">
         <p>
-            Explore the past without leaving your desktop.
+            Open source, MIT-ish license. Issues and PRs welcome.
         </p>
 
         <a
             class="github-small"
-            href="https://github.com/exoo25/HisTrophee"
+            href="https://github.com/"
             target="_blank"
         >
-            ★ View on GitHub
+            View source on GitHub
         </a>
     </div>
 
@@ -1012,20 +997,17 @@
 
     <div class="container">
 
-        <div class="eyebrow">
-            📜 HISTORICAL RESEARCH DESKTOP APP
-        </div>
-
         <h2>
-            Explore the past.<br>
-            <span>Discover the story.</span>
+            What happened<br>
+            in <span>any given year?</span>
         </h2>
 
         <p>
-            HisTrophee is a PyQt5-powered historical explorer that
-            combines historical events, Gregorian and Hijri dates,
-            Wikipedia discovery, timelines, statistics and CSV export
-            into one focused desktop experience.
+            HisTrophee is a small PyQt5 desktop app for looking up
+            historical events by year, category, or keyword. Pull up
+            a date on the Gregorian or Hijri calendar, scrub through
+            a year on the timeline, and fall back to Wikipedia when
+            the events API comes up short.
         </p>
 
         <div class="buttons">
@@ -1034,47 +1016,23 @@
                 href="#installation"
                 class="button primary"
             >
-                ↓ Get HisTrophee
+                Get HisTrophee
             </a>
 
             <a
-                href="https://github.com/Exoo25/Histrophee"
+                href="https://github.com/"
                 target="_blank"
                 class="button"
             >
-                ★ GitHub
+                Source on GitHub
             </a>
 
             <a
                 href="#features"
                 class="button"
             >
-                Explore Features →
+                See what it does
             </a>
-
-        </div>
-
-        <div class="hero-stats">
-
-            <div class="stat">
-                <strong>PyQt5</strong>
-                <span>Desktop Interface</span>
-            </div>
-
-            <div class="stat">
-                <strong>3+</strong>
-                <span>External Data Sources</span>
-            </div>
-
-            <div class="stat">
-                <strong>CSV</strong>
-                <span>Data Export</span>
-            </div>
-
-            <div class="stat">
-                <strong>Hijri</strong>
-                <span>Calendar Support</span>
-            </div>
 
         </div>
 
@@ -1088,95 +1046,93 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="number">01 — FEATURES</div>
-            <h3>Everything you need to explore history.</h3>
+            <h3>Features</h3>
             <p>
-                A collection of research-oriented tools packed into
-                one lightweight desktop application.
+                Nothing fancy — a search box, a few filters, and a
+                couple of ways to look at the results.
             </p>
         </div>
 
         <div class="feature-grid">
 
             <article class="feature">
-                <div class="feature-icon">🔎</div>
-                <h4>Historical Search</h4>
+                <div class="feature-icon">⌕</div>
+                <h4>Search</h4>
                 <p>
-                    Search historical events by year, keyword,
-                    calendar and category.
+                    Enter a year, pick a calendar, optionally add
+                    a category or a keyword. Results update below.
                 </p>
             </article>
 
             <article class="feature">
-                <div class="feature-icon">🏷️</div>
-                <h4>Automatic Categories</h4>
+                <div class="feature-icon">▤</div>
+                <h4>Categories</h4>
                 <p>
-                    Events are automatically classified into
-                    categories such as War, Politics, Science,
-                    Religion and Technology.
+                    Events get tagged War, Politics, Science,
+                    Religion or Technology so you can filter down
+                    to one.
                 </p>
             </article>
 
             <article class="feature">
-                <div class="feature-icon">🌙</div>
-                <h4>Dark Mode</h4>
+                <div class="feature-icon">◐</div>
+                <h4>Light / dark</h4>
                 <p>
-                    Switch between a clean light interface and
-                    a comfortable dark interface instantly.
+                    One toggle, no restart needed.
                 </p>
             </article>
 
             <article class="feature">
-                <div class="feature-icon">🎞️</div>
-                <h4>Timeline Filtering</h4>
+                <div class="feature-icon">—</div>
+                <h4>Timeline slider</h4>
                 <p>
-                    Move through the year with an interactive
-                    timeline slider.
+                    Drag through the year and events reveal
+                    themselves as you pass their date.
                 </p>
             </article>
 
             <article class="feature">
-                <div class="feature-icon">📊</div>
-                <h4>Statistics</h4>
+                <div class="feature-icon">▥</div>
+                <h4>Charts</h4>
                 <p>
-                    Analyze event categories and monthly
-                    distributions using charts.
+                    A quick Matplotlib breakdown of your results
+                    by category and by month.
                 </p>
             </article>
 
             <article class="feature">
-                <div class="feature-icon">🌐</div>
-                <h4>Wikipedia Fallback</h4>
+                <div class="feature-icon">W</div>
+                <h4>Wikipedia fallback</h4>
                 <p>
-                    Search Wikipedia automatically when you need
-                    additional historical context.
+                    When the events API doesn't turn up much,
+                    keyword searches also check Wikipedia.
                 </p>
             </article>
 
             <article class="feature">
-                <div class="feature-icon">📅</div>
-                <h4>On This Day</h4>
+                <div class="feature-icon">☉</div>
+                <h4>On this day</h4>
                 <p>
-                    Discover events, births and deaths that
-                    happened on today's date.
+                    A separate tab pulls Wikimedia's events,
+                    births and deaths for today's date.
                 </p>
             </article>
 
             <article class="feature">
                 <div class="feature-icon">☾</div>
-                <h4>Hijri Calendar</h4>
+                <h4>Hijri years</h4>
                 <p>
-                    Search using Hijri years and view converted
-                    Gregorian and Hijri dates.
+                    Search by Hijri year and see both the Hijri
+                    and Gregorian date side by side.
                 </p>
             </article>
 
             <article class="feature">
-                <div class="feature-icon">📤</div>
-                <h4>CSV Export</h4>
+                <div class="feature-icon">↧</div>
+                <h4>CSV export</h4>
                 <p>
-                    Export the results currently visible in the
-                    application for further analysis.
+                    Whatever's in the results table right now,
+                    dumped to a .csv file.
                 </p>
             </article>
 
@@ -1192,11 +1148,9 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="number">02 — SEARCH</div>
-            <h3>Find a moment in history.</h3>
+            <h3>How search works</h3>
             <p>
-                Combine multiple filters to narrow down historical
-                discoveries.
+                Four fields, all optional except the year.
             </p>
         </div>
 
@@ -1249,10 +1203,11 @@
                 </div>
 
                 <div class="showcase-info">
-                    <h4>Focused historical search</h4>
+                    <h4>The search panel</h4>
                     <p>
-                        Search a year, choose a calendar, select a
-                        category and optionally enter a keyword.
+                        Year is required. Calendar, category, and
+                        keyword are there if you want to narrow it
+                        down further.
                     </p>
                 </div>
 
@@ -1293,11 +1248,10 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="number">03 — TIMELINE</div>
-            <h3>Move through an entire year.</h3>
+            <h3>Timeline mode</h3>
             <p>
-                Enable the timeline filter and progressively reveal
-                events as you move from January toward December.
+                Turn it on and events appear as the slider passes
+                their date, January through December.
             </p>
         </div>
 
@@ -1331,39 +1285,36 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="number">04 — ON THIS DAY</div>
-            <h3>What happened today?</h3>
+            <h3>On this day</h3>
             <p>
-                HisTrophee can pull Wikimedia's On This Day data
-                and show historical events, births and deaths for
-                today's date.
+                Pulls straight from Wikimedia's On This Day feed
+                for today's date, split into three tabs.
             </p>
         </div>
 
         <div class="feature-grid">
 
             <div class="feature">
-                <div class="feature-icon">📜</div>
-                <h4>Historical Events</h4>
+                <div class="feature-icon">◇</div>
+                <h4>Events</h4>
                 <p>
-                    Discover important events associated with
-                    today's calendar date.
+                    Things that happened on this date, other years.
                 </p>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">🎂</div>
+                <div class="feature-icon">+</div>
                 <h4>Births</h4>
                 <p>
-                    Explore notable people born on today's date.
+                    Notable people born on this date.
                 </p>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">🕊️</div>
+                <div class="feature-icon">†</div>
                 <h4>Deaths</h4>
                 <p>
-                    Explore notable deaths associated with the date.
+                    Notable people who died on this date.
                 </p>
             </div>
 
@@ -1379,11 +1330,10 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="number">05 — STATISTICS</div>
-            <h3>Turn history into data.</h3>
+            <h3>Statistics</h3>
             <p>
-                HisTrophee can analyze the currently loaded events
-                and visualize their distribution.
+                A separate tab charts whatever's currently loaded
+                in the results table — no extra fetching.
             </p>
         </div>
 
@@ -1391,28 +1341,26 @@
 
             <div class="feature">
                 <div class="feature-icon">▥</div>
-                <h4>Events by Category</h4>
+                <h4>By category</h4>
                 <p>
-                    See which historical categories appear most
-                    frequently in your results.
+                    Bar chart of which categories show up most
+                    in the current results.
                 </p>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">📈</div>
-                <h4>Events by Month</h4>
+                <div class="feature-icon">⌇</div>
+                <h4>By month</h4>
                 <p>
-                    View the distribution of events across the
-                    months of the year.
+                    Same idea, grouped by month instead.
                 </p>
             </div>
 
             <div class="feature">
                 <div class="feature-icon">#</div>
-                <h4>Total Count</h4>
+                <h4>Count</h4>
                 <p>
-                    Quickly see how many events were included
-                    in the analysis.
+                    Total number of events in the current result set.
                 </p>
             </div>
 
@@ -1428,11 +1376,10 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="number">06 — CALENDARS</div>
-            <h3>History doesn't have just one calendar.</h3>
+            <h3>Two calendars</h3>
             <p>
-                Search Gregorian years or explore historical periods
-                using Hijri years.
+                Search by Gregorian year, or by Hijri year if
+                that's the one you're working from.
             </p>
         </div>
 
@@ -1443,22 +1390,22 @@
                 <thead>
                     <tr>
                         <th>Calendar</th>
-                        <th>Purpose</th>
-                        <th>Conversion</th>
+                        <th>Used for</th>
+                        <th>Handled by</th>
                     </tr>
                 </thead>
 
                 <tbody>
 
                     <tr>
-                        <td>📅 Gregorian</td>
-                        <td>Standard civil calendar search</td>
-                        <td>Native date handling</td>
+                        <td>Gregorian</td>
+                        <td>Everyday civil dates</td>
+                        <td>Python's date handling</td>
                     </tr>
 
                     <tr>
-                        <td>☾ Hijri</td>
-                        <td>Islamic calendar year search</td>
+                        <td>Hijri</td>
+                        <td>Islamic calendar years</td>
                         <td>Aladhan API</td>
                     </tr>
 
@@ -1478,11 +1425,10 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="number">07 — WIKIPEDIA</div>
-            <h3>Go deeper when the API isn't enough.</h3>
+            <h3>Wikipedia fallback</h3>
             <p>
-                HisTrophee can search Wikipedia for additional
-                context and related articles.
+                API Ninjas doesn't cover every year and keyword
+                well, so keyword searches also check Wikipedia.
             </p>
         </div>
 
@@ -1490,19 +1436,19 @@
 
             <div class="feature">
                 <div class="feature-icon">W</div>
-                <h4>Search Results</h4>
+                <h4>Alongside results</h4>
                 <p>
-                    Keyword searches can trigger a Wikipedia search
-                    alongside historical event discovery.
+                    Matching Wikipedia articles show up next to
+                    the regular event list, not instead of it.
                 </p>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">🔗</div>
-                <h4>Article Links</h4>
+                <div class="feature-icon">↗</div>
+                <h4>Open the article</h4>
                 <p>
-                    Double-click an article to view its description
-                    and open the complete Wikipedia page.
+                    Double-click an entry for a short description,
+                    or open the full page in your browser.
                 </p>
             </div>
 
@@ -1518,11 +1464,9 @@
     <div class="container">
 
         <div class="section-head">
-            <div class="number">08 — EXPORT</div>
-            <h3>Take your discoveries with you.</h3>
+            <h3>CSV export</h3>
             <p>
-                Export the visible table contents into a standard
-                CSV file.
+                One button, writes exactly what's in the table.
             </p>
         </div>
 
@@ -1541,11 +1485,10 @@ January 1,1947,Example Event,Politics,Historical description...
     <div class="container">
 
         <div class="section-head">
-            <div class="number">09 — SCREENSHOTS</div>
-            <h3>See HisTrophee in action.</h3>
+            <h3>Screenshots</h3>
             <p>
-                Replace the placeholders below with screenshots
-                from the actual desktop application.
+                Placeholders — swap these for real screenshots once
+                the app looks the way you want it to.
             </p>
         </div>
 
@@ -1603,8 +1546,7 @@ January 1,1947,Example Event,Politics,Historical description...
     <div class="container">
 
         <div class="section-head">
-            <div class="number">10 — TECHNOLOGY</div>
-            <h3>Built with a simple, focused stack.</h3>
+            <h3>Stack</h3>
         </div>
 
         <div class="table-wrap">
@@ -1671,11 +1613,10 @@ January 1,1947,Example Event,Politics,Historical description...
     <div class="container">
 
         <div class="section-head">
-            <div class="number">11 — INSTALLATION</div>
-            <h3>Run it your way.</h3>
+            <h3>Installation</h3>
             <p>
-                Download the Windows executable or run the project
-                directly from source.
+                Grab the Windows build, or run it from source if
+                you're on another OS or want to poke at the code.
             </p>
         </div>
 
@@ -1683,16 +1624,16 @@ January 1,1947,Example Event,Politics,Historical description...
 
             <div class="install-card">
 
-                <h4>🖥️ Windows EXE</h4>
+                <h4>Windows .exe</h4>
 
                 <p>
-                    For users who don't want to install Python.
+                    No Python required.
                 </p>
 
                 <div class="step">
                     <div class="step-number">1</div>
                     <div>
-                        Open the project's Releases page.
+                        Open the Releases page.
                     </div>
                 </div>
 
@@ -1706,26 +1647,25 @@ January 1,1947,Example Event,Politics,Historical description...
                 <div class="step">
                     <div class="step-number">3</div>
                     <div>
-                        Launch the application.
+                        Run it.
                     </div>
                 </div>
 
                 <a
-                    href="https://github.com/Exoo25/Histrophee/releases/download/v1.0/HISTROPHEE.exe"
+                    href="#"
                     class="button primary"
                 >
-                    ↓ Download EXE
+                    Download EXE
                 </a>
 
             </div>
 
             <div class="install-card">
 
-                <h4>🐍 Run From Source</h4>
+                <h4>From source</h4>
 
                 <p>
-                    For developers who want to modify or contribute
-                    to HisTrophee.
+                    For macOS, Linux, or if you want to edit the code.
                 </p>
 
                 <div class="code">
@@ -1745,11 +1685,10 @@ python main.py
 
         <div class="install-card">
 
-            <h4>📦 Build Your Own EXE</h4>
+            <h4>Building your own .exe</h4>
 
             <p>
-                Package HisTrophee into a standalone Windows
-                executable using PyInstaller.
+                Uses PyInstaller.
             </p>
 
             <div class="code">
@@ -1759,8 +1698,8 @@ pyinstaller --onefile --windowed --name HisTrophee main.py
             </div>
 
             <p style="margin-top:15px;margin-bottom:0">
-                Your executable will appear inside the
-                <strong>dist/</strong> directory.
+                The executable ends up in
+                <strong>dist/</strong>.
             </p>
 
         </div>
@@ -1775,21 +1714,19 @@ pyinstaller --onefile --windowed --name HisTrophee main.py
     <div class="container">
 
         <div class="section-head">
-            <div class="number">12 — APIS</div>
-            <h3>Powered by external historical data.</h3>
+            <h3>APIs it talks to</h3>
             <p>
-                HisTrophee connects several services to create a
-                richer historical research experience.
+                Three services, no local database.
             </p>
         </div>
 
         <div class="feature-grid">
 
             <div class="feature">
-                <div class="feature-icon">🧮</div>
+                <div class="feature-icon">▤</div>
                 <h4>API Ninjas</h4>
                 <p>
-                    Provides historical event information by year.
+                    The main source for historical events by year.
                 </p>
             </div>
 
@@ -1797,7 +1734,7 @@ pyinstaller --onefile --windowed --name HisTrophee main.py
                 <div class="feature-icon">☾</div>
                 <h4>Aladhan</h4>
                 <p>
-                    Converts between Hijri and Gregorian dates.
+                    Hijri ↔ Gregorian date conversion.
                 </p>
             </div>
 
@@ -1805,8 +1742,7 @@ pyinstaller --onefile --windowed --name HisTrophee main.py
                 <div class="feature-icon">W</div>
                 <h4>Wikimedia</h4>
                 <p>
-                    Provides Wikipedia search and On This Day
-                    historical information.
+                    Wikipedia search, plus the On This Day feed.
                 </p>
             </div>
 
@@ -1816,13 +1752,11 @@ pyinstaller --onefile --windowed --name HisTrophee main.py
 
         <div class="feature" style="border-color:#7a5430">
 
-            <h4>🔐 API Key Security</h4>
+            <h4>A note on API keys</h4>
 
             <p>
-                Never publish a real API key directly inside a
-                public GitHub repository. Use environment variables
-                or another secure configuration method for production
-                builds.
+                Don't commit a real key to a public repo. Read it
+                from an environment variable instead.
             </p>
 
         </div>
@@ -1837,8 +1771,7 @@ pyinstaller --onefile --windowed --name HisTrophee main.py
     <div class="container">
 
         <div class="section-head">
-            <div class="number">13 — ROADMAP</div>
-            <h3>Where HisTrophee can go next.</h3>
+            <h3>Done / not done yet</h3>
         </div>
 
         <div class="roadmap">
@@ -1885,22 +1818,22 @@ pyinstaller --onefile --windowed --name HisTrophee main.py
 
             <div class="roadmap-item planned">
                 <div class="check">→</div>
-                <span>More advanced historical visualization</span>
+                <span>Charts beyond the two bar graphs — a stacked view, maybe</span>
             </div>
 
             <div class="roadmap-item planned">
                 <div class="check">→</div>
-                <span>Historical maps</span>
+                <span>A map view for events with a location</span>
             </div>
 
             <div class="roadmap-item planned">
                 <div class="check">→</div>
-                <span>Additional calendar systems</span>
+                <span>Julian calendar support</span>
             </div>
 
             <div class="roadmap-item planned">
                 <div class="check">→</div>
-                <span>More export formats</span>
+                <span>JSON export alongside CSV</span>
             </div>
 
         </div>
@@ -1915,44 +1848,42 @@ pyinstaller --onefile --windowed --name HisTrophee main.py
     <div class="container">
 
         <div class="section-head">
-            <div class="number">14 — TROUBLESHOOTING</div>
-            <h3>Something not working?</h3>
+            <h3>Troubleshooting</h3>
         </div>
 
         <div class="faq">
 
             <details>
-                <summary>Why am I getting an API error?</summary>
+                <summary>Getting an API error</summary>
                 <p>
-                    Check your API Ninjas key, internet connection,
-                    API limits and whether the service is currently
-                    available.
+                    Double-check your API Ninjas key, your connection,
+                    and whether you've hit their rate limit.
                 </p>
             </details>
 
             <details>
-                <summary>Why are there no results?</summary>
+                <summary>No results coming back</summary>
                 <p>
-                    Try removing the category or keyword filter,
-                    searching another year, or allowing the
-                    Wikipedia fallback to provide related articles.
+                    Drop the category or keyword filter, try a
+                    different year, or let the Wikipedia fallback
+                    do its thing.
                 </p>
             </details>
 
             <details>
-                <summary>Why don't statistics work?</summary>
+                <summary>Statistics tab is blank</summary>
                 <p>
-                    Statistics require Matplotlib. Install it with
-                    <strong>pip install matplotlib</strong>.
+                    You probably don't have Matplotlib installed —
+                    <strong>pip install matplotlib</strong> fixes it.
                 </p>
             </details>
 
             <details>
-                <summary>Does the application require internet?</summary>
+                <summary>Does it need an internet connection?</summary>
                 <p>
-                    Yes. The current version retrieves historical
-                    information and date conversions from online
-                    services.
+                    Yes, for everything except the UI itself —
+                    events, date conversion, and Wikipedia are all
+                    fetched live.
                 </p>
             </details>
 
@@ -1968,43 +1899,39 @@ pyinstaller --onefile --windowed --name HisTrophee main.py
     <div class="container">
 
         <div class="section-head">
-            <div class="number">15 — FAQ</div>
-            <h3>Frequently asked questions.</h3>
+            <h3>FAQ</h3>
         </div>
 
         <div class="faq">
 
             <details>
-                <summary>What is HisTrophee?</summary>
+                <summary>What is this, exactly?</summary>
                 <p>
-                    HisTrophee is a desktop historical exploration
-                    application built with Python and PyQt5.
+                    A small Python/PyQt5 desktop app for looking up
+                    historical events by year. Nothing more mysterious
+                    than that.
                 </p>
             </details>
 
             <details>
                 <summary>Is it free?</summary>
                 <p>
-                    The application itself can be distributed as
-                    an executable, while external API services may
-                    have their own usage limits and policies.
+                    The app itself, yes. The API Ninjas service it
+                    relies on has its own free tier and rate limits.
                 </p>
             </details>
 
             <details>
-                <summary>Does it have a database?</summary>
+                <summary>Does it store anything locally?</summary>
                 <p>
-                    The current application does not require a local
-                    database. Historical information is retrieved
-                    from external services.
+                    No database — every search hits the APIs fresh.
                 </p>
             </details>
 
             <details>
-                <summary>Can I contribute?</summary>
+                <summary>Can I send a PR?</summary>
                 <p>
-                    Yes. Bug reports, feature suggestions and pull
-                    requests are welcome.
+                    Yes, happily. See the contributing section below.
                 </p>
             </details>
 
@@ -2020,11 +1947,9 @@ pyinstaller --onefile --windowed --name HisTrophee main.py
     <div class="container">
 
         <div class="section-head">
-            <div class="number">16 — CONTRIBUTING</div>
-            <h3>Help improve HisTrophee.</h3>
+            <h3>Contributing</h3>
             <p>
-                Have an idea for a better historical tool?
-                Contributions and suggestions are welcome.
+                The usual fork-branch-PR flow.
             </p>
         </div>
 
@@ -2053,20 +1978,18 @@ git push origin feature/my-feature<br><br>
     <div class="container">
 
         <div class="section-head">
-            <div class="number">17 — LICENSE</div>
-            <h3>Open, readable, and yours to explore.</h3>
+            <h3>License</h3>
             <p>
-                Add your project's actual license information here.
+                Fill in your actual license here before you publish.
             </p>
         </div>
 
         <div class="feature">
 
-            <h4>📜 License</h4>
+            <h4>License</h4>
 
             <p>
-                HisTrophee is released under the license specified
-                in the repository's <strong>LICENSE</strong> file.
+                See the <strong>LICENSE</strong> file in the repo.
             </p>
 
         </div>
@@ -2084,23 +2007,23 @@ git push origin feature/my-feature<br><br>
 
             <div>
                 <div class="footer-brand">
-                    📜 <span>HisTrophee</span>
+                    <span>HisTrophee</span>
                 </div>
 
                 <div class="footer-text">
-                    Explore the past. Discover the story.
+                    A desktop app for looking things up in history.
                 </div>
             </div>
 
             <div class="footer-text">
-                Built with Python + PyQt5
+                Python + PyQt5
             </div>
 
             <a
                 href="#home"
                 class="button"
             >
-                ↑ Back to top
+                Back to top
             </a>
 
         </div>
