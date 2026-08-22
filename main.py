@@ -16,6 +16,8 @@ from PyQt5.QtCore import (
     QThread,
     pyqtSignal
 )
+from PyQt5.QtWidgets import QShortcut
+from PyQt5.QtGui import QKeySequence
 
 from PyQt5.QtWidgets import (
     QApplication,
@@ -48,7 +50,7 @@ try:
 except ImportError:
     MATPLOTLIB_AVAILABLE = False
 
-API_KEY = "ENTER_YOUR_API_KEY" #enter your api key from apininjas if using.
+API_KEY = "aehJR+HvQkF1jXQghQaC3g==X5fqDvt3X5Uw8kQs"
 
 API_URL = (
     "https://api.api-ninjas.com/v1/historicalevents"
@@ -674,35 +676,57 @@ class APIWorker(QThread):
                     end_date.year + 1
                 )
 
+
             else:
 
-                if not (
-                    1 <= self.year <= 9999
-                ):
-
+                if not (-500 <= self.year <= 2022):
                     self.error.emit(
+
                         "Invalid Year",
-                        "Gregorian year must be between 1 and 9999."
+
+                        "Gregorian year must be between -500 and 2022."
+
                     )
 
                     return
 
-                start_date = date(
-                    self.year,
-                    1,
-                    1
-                )
-
-                end_date = date(
-                    self.year,
-                    12,
-                    31
-                )
-
                 years = [
+
                     self.year
+
                 ]
 
+                # Python's datetime.date cannot represent BCE years.
+
+                # Only create date objects for normal Gregorian years.
+
+                if self.year >= 1:
+
+                    start_date = date(
+
+                        self.year,
+
+                        1,
+
+                        1
+
+                    )
+
+                    end_date = date(
+
+                        self.year,
+
+                        12,
+
+                        31
+
+                    )
+
+                else:
+
+                    start_date = None
+
+                    end_date = None
             all_events = []
 
             for api_year in years:
@@ -750,8 +774,11 @@ class APIWorker(QThread):
                     return
 
                 response.raise_for_status()
+                print("API REQUEST FINISHED", response.status_code)
+
 
                 data = response.json()
+                print("API DATA:", data)
 
                 if isinstance(
                     data,
@@ -952,18 +979,15 @@ class APIWorker(QThread):
                     self.category
                 )
 
-            wiki_query = " ".join(
-                query_parts
-            ).strip()
+            wiki_query = f"Events happened in {self.year}"
 
             matching_events = self.filter_events(
                 events
             )
 
             should_search_wikipedia = (
-                bool(self.search_text)
-                or not events
-                or not matching_events
+                    bool(self.search_text)
+                    or not events
             )
 
             if should_search_wikipedia:
@@ -1035,8 +1059,18 @@ class APIWorker(QThread):
         )
 
         response.raise_for_status()
+        self.status.emit(
+            f"HTTP status: {response.status_code}"
+        )
 
         data = response.json()
+
+        self.status.emit(
+            f"API returned {len(data)} results"
+        )
+
+
+
 
         events = []
 
@@ -1635,7 +1669,17 @@ class HistoricalEventsApp(QWidget):
         )
 
         self.year_input = QLineEdit()
+        def surprise_me():
+            import random
+            a = random.randint(1,2022)
+            self.year_input.setText(str(a))
 
+        self.random_button = QPushButton("🎲 Random Year")
+        self.random_button.clicked.connect(surprise_me)
+        controls.addWidget(self.random_button)
+
+        shortcut = QShortcut(QKeySequence("Ctrl+R"), self)
+        shortcut.activated.connect(surprise_me)
         self.year_input.setPlaceholderText(
             "Example: 1947"
         )
