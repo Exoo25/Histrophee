@@ -48,7 +48,7 @@ try:
 except ImportError:
     MATPLOTLIB_AVAILABLE = False
 
-API_KEY = "aehJR+HvQkF1jXQghQaC3g==X5fqDvt3X5Uw8kQs"
+API_KEY = "ENTER_YOUR_API_KEY" #enter your api key from apininjas if using.
 
 API_URL = (
     "https://api.api-ninjas.com/v1/historicalevents"
